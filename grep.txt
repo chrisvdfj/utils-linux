@@ -1,0 +1,12 @@
+test de grep 
+
+ifconfig |grep -oE '([0-9]{1,3}\.){3}[0-9]{1,3}'|grep -v '255\|127\|192.168.122.1'
+
+grep -i ignora case sensitive
+grep -iw justo la palabra
+
+grep -A 3 after
+grep -B 3 before
+grep -C 3 around
+
+grep -rIwbon  Version /etc/*
