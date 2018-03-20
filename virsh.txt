@@ -1,0 +1,35 @@
+virsh list 		lista maquinas virtuales
+virsh nodeinfo		muestra descripcion del host
+
+
+virsh  pool-define-as centosvm --type dir --target "/var/lib/libvirt/centosvm/"
+
+virsh pool-list --all
+
+virsh pool-build centosvm
+virsh pool-start centosvm
+
+
+virsh pool-list --all
+
+virsh pool-autostart centosvm
+
+virsh pool-list --all
+
+virsh pool-info centosvm
+
+create dir for VM, then
+
+qemu-img create -f raw /var/lib/libvirt/images/centosvm/centosvm.img 20G
+
+virt-install --name=centos7-1 --disk=/var/lib/libvirt/images/centos7-1.img,size=20  --graphics spice --vcpu=1 --ram=2048 --cdrom=/home/chris/isoimages/CentOS-7-x86_64-Everything-1708.iso --network bridge=virbr0
+
+si sale error hay que habilitar red con:
+listar: 
+virsh net-list --all
+
+cambiar estado:
+virsh net-start default
+
+
+	
