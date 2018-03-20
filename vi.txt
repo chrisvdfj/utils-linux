@@ -1,0 +1,42 @@
+set nocompatible
+set backspace=2
+set number
+set nowrap
+set expandtab
+set tabstop=2
+set shiftwidth=2
+
+
+
+w - avanza palabra por palabra
+b - retrocede palabra por palabra
+$ - avanza final de linea
+0 - principio de linea
+e - mueve al inal de cada palabra
+shift h - mueve al principio de la pantalla
+shift m - mueve a la mitad de la pantalla
+shift l - mueve al final de la pantalla
+control f - mueve a la siguiente pantalla
+control b - mueve a la pantalla anterior
+capital G - lleva al final
+1G - lleva a linea 1
+shift i - insert mode principio de file
+shift a - insert mode al final de la linea
+o - inserta linea abajo del cursor
+shift -o inserta linea arriba del cursor
+x - borra un caracter
+shift x - borra caracter a la izquierda
+1x - borra 1 caracter hacia la derecha
+dw - borra palabra hacia la derecha
+. - repite lo ultio que se hizo
+d0 - borro todo a la izquiera
+d$ - borro todo hasta el final de la linea
+dd - borra la linea
+3dd - borra 3 lineas
+
+: %s/patron/reemplazo/g
+: %s/\<patron\>/reemplazo/g
+
+SED
+sed -i s/foo/bar/g file_name
+
