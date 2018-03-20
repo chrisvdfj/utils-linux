@@ -1,0 +1,61 @@
+MYSQL
+
+apt install mysql-server
+$mysql_secure_installation
+
+Set MySQL Root password:-   mysqladmin -u root password yournwpassword
+
+Change MySQL Root password :- mysqladmin -u root -p123456 password '123'
+
+Check MySQL Server is running:-  mysqladmin -u root -p ping     
+
+Check which MySQL version I am running:- mysqladmin -u root -p version
+
+Find out current Status of MySQL server :- mysqladmin -u root -ptmppassword status
+
+Check status of all MySQL Server Variable’s and value’s:- mysqladmin -u root -p extended-status
+
+See all MySQL server Variables and Values:-  mysqladmin  -u root -p variables
+
+Check all the running Process of MySQL server :- mysqladmin -u root -p processlist
+
+Create a Database in MySQL server:- mysqladmin -u root -p create databasename
+
+Drop a Database in MySQL server:-  mysqladmin -u root -p drop databasename
+
+Reload/refresh MySQL Privileges:- 
+
+mysqladmin -u root -p reload;
+
+mysqladmin -u root -p refresh
+
+Shutdown MySQL server Safely:-  mysqladmin -u root -p shutdown
+/etc/init.d/mysqld stop
+/etc/init.d/mysqld start
+
+flush-hosts: Flush all host information from host cache.
+flush-tables: Flush all tables.
+flush-threads: Flush all threads cache.
+flush-logs: Flush all information logs.
+flush-privileges: Reload the grant tables (same as reload).
+flush-status: Clear status variables.
+
+Useful MySQL Flush commands
+mysqladmin -u root -p flush-hosts
+mysqladmin -u root -p flush-tables
+mysqladmin -u root -p flush-threads
+mysqladmin -u root -p flush-logs
+mysqladmin -u root -p flush-privileges
+mysqladmin -u root -p flush-status
+
+kill Sleeping MySQL Client Process:- mysqladmin -u root -p processlist
+mysqladmin -u root -p kill 5
+mysqladmin -u root -p kill 5,10
+
+Run multiple mysqladmin commands together :- mysqladmin  -u root -p processlist status version
+Connect remote mysql server:- mysqladmin  -h 192.168.0.0 -u root -p
+Execute command on remote MySQL server :-  mysqladmin  -h 192.168.0.0 -u root -p status
+Start/stop MySQL replication on a slave server:-  mysqladmin  -u root -p start-slave
+mysqladmin  -u root -p stop-slave
+Store MySQL server Debug Information to logs :- mysqladmin  -u root -p debug
+
