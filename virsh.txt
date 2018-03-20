@@ -32,4 +32,21 @@ cambiar estado:
 virsh net-start default
 
 
+MANAGE
+
+virsh list --all
+ls -l /etc/libvirt/qemu/centos7-1.xml
+virsh edit centos7-1
+
+virsh dominfo centos7-1
+
+virsh start centos7-1
+virsh stop centos7-1
+virsh console centos7-1
+
+virt-top
+virt shutdowm centos7-1
+
+
+
 	
